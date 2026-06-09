@@ -1,0 +1,63 @@
+.admin-dashboard {
+  padding: 2rem;
+}
+
+.admin-dashboard h1 {
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-box {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.admin-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card h3 {
+  margin-top: 0;
+}
+
+.admin-card p {
+  margin: 0.5rem 0 1rem;
+  line-height: 1.4;
+}
+
+.admin-card button {
+  background: #5a67d8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-card button:hover {
+  background: #434190;
+}

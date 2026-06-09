@@ -1,0 +1,51 @@
+# Frontend dependencies
+reguide/node_modules/
+reguide/dist/
+reguide/node_modules/.vite/
+reguide/.vite/
+reguide/.env
+reguide/.env.local
+reguide/.env.*.local
+
+# Build outputs
+reguide/build/
+reguide/coverage/
+
+# Backend dependencies
+backend/.venv/
+backend/venv/
+backend/.env
+backend/.env.local
+backend/__pycache__/
+backend/*.egg-info/
+backend/dist/
+backend/build/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db

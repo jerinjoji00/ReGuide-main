@@ -1,0 +1,124 @@
+.page {
+  height: 100vh;
+  background: #f4f6fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.login-box {
+  width: 350px;
+  background: rgb(231, 229, 229);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.subtitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 15px;
+
+}
+
+label {
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}
+
+
+ input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.password-box {
+ 
+  position: relative;
+}
+
+.password-box input {
+    
+  padding-right: 40px;
+}
+
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #1066c9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+.forgot {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgb(8, 132, 204);
+}
+
+.or {
+  text-align: center;
+  margin: 15px 0;
+  color: gray;
+}
+
+.register-text {
+  text-align: center;
+  font-size: 13px;
+}
+
+.error {
+  color: rgb(155, 13, 13);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.subtitle1 {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 20px;
+  
+  text-align: center;
+
+
+}
+
+/* general message style */
+.message-error {
+  color: #d9534f;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.success {
+  color: #28a745;
+  font-size: 13px;
+  margin-bottom: 8px;
+}

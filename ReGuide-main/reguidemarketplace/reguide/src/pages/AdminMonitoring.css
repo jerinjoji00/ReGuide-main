@@ -1,0 +1,261 @@
+.admin-container {
+  padding: 40px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: calc(100vh - 48px);
+}
+
+.monitoring-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.monitoring-header h1 {
+  margin: 0;
+}
+
+.monitoring-header p {
+  margin: 8px 0 0;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filters select,
+.filters input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.monitor-tab {
+  flex: 1;
+  width: calc((100% - 30px) / 4);
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-weight: 600;
+  text-align: center;
+}
+
+.monitor-tab.active {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  color: #312e81;
+}
+
+.monitor-tab.overdue {
+  color: red;
+}
+
+.monitoring-content-shell {
+  width: 100%;
+  min-height: calc(100vh - 320px);
+}
+
+.monitor-table-wrap {
+  width: 100%;
+  min-height: calc(100vh - 320px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.monitor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  table-layout: fixed;
+}
+
+.monitor-table th,
+.monitor-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.status.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status.overdue {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status.received {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.status.pending {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.monitoring-error {
+  color: #dc2626;
+  margin: 10px 0 14px;
+}
+
+.monitor-no-data-row td {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  padding: 28px 15px;
+}
+
+.monitoring-empty-state {
+  min-height: calc(100vh - 320px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monitor-view-details {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.monitor-view-details:hover {
+  border-color: #4f46e5;
+  color: #312e81;
+  background: #eef2ff;
+}
+
+.monitor-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.monitor-chat-btn {
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.monitor-chat-btn:hover {
+  border-color: #38bdf8;
+  color: #075985;
+  background: #e0f2fe;
+}
+
+.monitor-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 1200;
+}
+
+.monitor-modal {
+  width: min(900px, 96vw);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.monitor-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.monitor-modal-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.monitor-close {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #334155;
+}
+
+.monitor-close:hover {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  color: #312e81;
+}
+
+.monitor-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.monitor-detail-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.monitor-detail-card h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.monitor-detail-card p {
+  margin: 4px 0;
+  color: #334155;
+  font-size: 14px;
+}
