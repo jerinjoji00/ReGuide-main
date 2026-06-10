@@ -55,7 +55,93 @@ function Browse() {
     });
   };
 
-  const seedGuides = useMemo(() => [], []);
+  const seedGuides = useMemo(() => [
+    {
+      id: "mock-1",
+      title: "HC Verma Concept of Physics - Vol 1 & 2",
+      author: "Dr. H.C. Verma",
+      subject: "JEE",
+      description: "Complete theory and solved/unsolved problems for JEE Physics preparation. Very good condition with no annotations.",
+      condition: "Like New",
+      pages: 450,
+      rentalPrice: 80,
+      buyPrice: 450,
+      pricingType: "both renting and purchase",
+      seller: "Aarav Sharma",
+      seller_id: "mock-seller-1",
+      sellerVerified: true,
+      rating: 4.8,
+      reviews: 12
+    },
+    {
+      id: "mock-2",
+      title: "Organic Chemistry for NEET",
+      author: "M.S. Chouhan",
+      subject: "NEET",
+      description: "Excellent guide with detailed practice worksheets and pathways for organic reactions.",
+      condition: "New",
+      pages: 320,
+      rentalPrice: 95,
+      buyPrice: 550,
+      pricingType: "both renting and purchase",
+      seller: "Neha Gupta",
+      seller_id: "mock-seller-2",
+      sellerVerified: true,
+      rating: 4.9,
+      reviews: 8
+    },
+    {
+      id: "mock-3",
+      title: "Quantitative Aptitude for CAT",
+      author: "Arun Sharma",
+      subject: "CAT",
+      description: "The definitive bible for CAT prep. Includes advanced level questions and short-cut tricks.",
+      condition: "Good",
+      pages: 800,
+      rentalPrice: 120,
+      buyPrice: 600,
+      pricingType: "both renting and purchase",
+      seller: "Rohan Mehta",
+      seller_id: "mock-seller-3",
+      sellerVerified: false,
+      rating: 4.7,
+      reviews: 20
+    },
+    {
+      id: "mock-4",
+      title: "GATE Computer Science & IT 2026",
+      author: "Made Easy Team",
+      subject: "GATE",
+      description: "Brand new study material from Made Easy. Comprehensive coverage of all GATE topics.",
+      condition: "New",
+      pages: 650,
+      rentalPrice: 150,
+      buyPrice: 750,
+      pricingType: "purchase only",
+      seller: "Priya Nair",
+      seller_id: "mock-seller-4",
+      sellerVerified: true,
+      rating: 4.6,
+      reviews: 5
+    },
+    {
+      id: "mock-5",
+      title: "Indian Polity for UPSC Civil Services",
+      author: "M. Laxmikanth",
+      subject: "UPSC",
+      description: "6th Edition Indian Polity. Essential for UPSC. Highlighted key sections for easy revision.",
+      condition: "Fair",
+      pages: 920,
+      rentalPrice: 70,
+      buyPrice: 350,
+      pricingType: "renting only",
+      seller: "Vikram Singh",
+      seller_id: "mock-seller-5",
+      sellerVerified: false,
+      rating: 4.5,
+      reviews: 15
+    }
+  ], []);
 
   useEffect(() => {
     let isMounted = true;
