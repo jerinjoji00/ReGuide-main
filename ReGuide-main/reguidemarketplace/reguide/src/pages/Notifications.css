@@ -76,7 +76,7 @@
   gap: 14px;
 }
 
-.notifications-summary-card > div {
+.notifications-summary-card>div {
   background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
   border: 1px solid #e2e8f0;
   border-radius: 16px;
