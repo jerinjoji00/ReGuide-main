@@ -1,7 +1,7 @@
 .browse-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 125vh;
   width: 165vh;
   background: #f8f9fa;
 }
