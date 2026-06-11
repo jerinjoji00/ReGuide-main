@@ -144,6 +144,9 @@ CREATE TABLE IF NOT EXISTS guides (
   front_cover_url TEXT,
   back_cover_url TEXT,
   index_page_url TEXT,
+  status TEXT DEFAULT 'Pending',
+  moderation_status TEXT DEFAULT 'pending',
+  market_price NUMERIC,
   created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -170,6 +173,15 @@ WITH CHECK (true);
 CREATE POLICY "Users can update their own guides"
 ON guides FOR UPDATE
 USING (auth.uid() = seller_id);
+
+CREATE POLICY "Admins can update all guides"
+ON guides FOR UPDATE
+USING (
+  EXISTS (
+    SELECT 1 FROM profiles
+    WHERE id = auth.uid() AND role = 'admin'
+  )
+);
 
 -- Orders table for purchase and rental records
 CREATE TABLE IF NOT EXISTS orders (

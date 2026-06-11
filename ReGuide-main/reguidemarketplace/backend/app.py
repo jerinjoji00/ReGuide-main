@@ -28,7 +28,7 @@ def load_local_env_file():
         key, value = line.split("=", 1)
         key = key.strip()
         value = value.strip().strip('"').strip("'")
-        if key and key not in os.environ:
+        if key:
             os.environ[key] = value
 
 
@@ -463,6 +463,11 @@ def normalize_phone_to_e164(raw_phone):
 
 
 def send_otp_via_twilio(phone_e164, otp_code):
+    account_sid = os.getenv("TWILIO_ACCOUNT_SID", "").strip()
+    if not account_sid or account_sid.startswith("ACxxxxxxxx"):
+        print(f"\n[MOCK TWILIO OTP] SMS verification code for {phone_e164} is: {otp_code}\n")
+        return
+
     twilio = get_twilio_config()
 
     if twilio["verify_service_sid"]:
