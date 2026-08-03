@@ -1,4 +1,4 @@
-ReGuide — Guide Selling & Rental Marketplace
+ReGuide — Guide Selling & Rental Marketplace.
 
 ReGuide is a full-stack marketplace platform where users can buy, sell, and rent study guides with secure payments, deposits, and verification features.
 
