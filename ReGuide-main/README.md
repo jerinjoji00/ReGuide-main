@@ -148,8 +148,11 @@ npm run dev
 
 Frontend (Vercel)
 
+- Root directory: "reguidemarketplace/reguide"
+- Build command: "npm run build"
+- Output directory: "dist"
 - Set "VITE_BACKEND_URL"
-- Deploy automatically from GitHub
+- Keep the `vercel.json` rewrite so React Router routes work on refresh
 
 Backend (Render)
 
