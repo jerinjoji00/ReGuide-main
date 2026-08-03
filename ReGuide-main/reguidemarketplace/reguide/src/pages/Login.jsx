@@ -123,6 +123,12 @@ function Login() {
 
   return (
     <div className="page">
+      <div className="auth-logo-watermark auth-logo-watermark-left" aria-hidden="true">
+        <img src="/reguide-logo.svg" alt="" />
+      </div>
+      <div className="auth-logo-watermark auth-logo-watermark-right" aria-hidden="true">
+        <img src="/reguide-logo.svg" alt="" />
+      </div>
       <div className="login-box">
         <div className="logo-wrapper">
           <ReGuideLogo size="lg" />

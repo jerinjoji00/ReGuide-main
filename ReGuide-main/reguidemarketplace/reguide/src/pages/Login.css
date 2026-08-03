@@ -1,18 +1,63 @@
 .page {
-  height: 100vh;
-  background: #f4f6fb;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(79, 172, 254, 0.35), transparent 0 24%),
+    radial-gradient(circle at 88% 18%, rgba(16, 102, 201, 0.3), transparent 0 22%),
+    radial-gradient(circle at 10% 82%, rgba(56, 189, 248, 0.24), transparent 0 20%),
+    radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.22), transparent 0 20%),
+    linear-gradient(135deg, #edf5ff 0%, #f7fbff 48%, #edf5ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
+  isolation: isolate;
+}
+
+.auth-logo-watermark {
+  position: fixed;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.24;
+  transform: translateY(-50%) scale(1);
+  filter: blur(0.2px);
+  z-index: 0;
+}
+
+.auth-logo-watermark img {
+  display: block;
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(16, 102, 201, 0.12);
+}
+
+.auth-logo-watermark-left {
+  left: -80px;
+}
+
+.auth-logo-watermark-right {
+  right: -80px;
+}
+
+.auth-logo-watermark-right img {
+  transform: scaleX(-1);
 }
 
 .login-box {
+  position: relative;
+  z-index: 1;
   width: 350px;
-  background: rgb(231, 229, 229);
+  background: rgba(255, 255, 255, 0.92);
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(12px);
 }
 
 
@@ -61,10 +106,10 @@ button {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
-  background: #1066c9;
+  background: linear-gradient(135deg, #1066c9, #4facfe);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 
@@ -121,4 +166,28 @@ button {
   color: #28a745;
   font-size: 13px;
   margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: min(100%, 340px);
+    padding: 24px 20px;
+  }
+
+  .auth-logo-watermark {
+    opacity: 0.18;
+  }
+
+  .auth-logo-watermark img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .auth-logo-watermark-left {
+    left: -56px;
+  }
+
+  .auth-logo-watermark-right {
+    right: -56px;
+  }
 }

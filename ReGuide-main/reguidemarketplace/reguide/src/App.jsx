@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx"; // added
@@ -32,8 +33,7 @@ function App() {
   
     <BrowserRouter future={{ v7_relativeSplatPath: true }}>
       <Routes>
-          {/* keep root for backwards compatibility */}
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<LandingPage />} />
           {/* explicit login route so we can navigate easily */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
