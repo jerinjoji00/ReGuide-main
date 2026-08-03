@@ -21,11 +21,6 @@ function Login() {
     e.preventDefault();
     setError("");
 
-    if (!/(\.(com|ac\.in|edu\.ac\.in))$/.test(email)) {
-      setError("Email must end in .com, .ac.in or .edu.ac.in");
-      return;
-    }
-
     if (!password) {
       setError("Please enter your password");
       return;
@@ -35,7 +30,12 @@ function Login() {
       await supabase.auth.signInWithPassword({ email, password });
 
     if (authError) {
-      setError("Invalid email or password");
+      if (String(authError.message || "").toLowerCase().includes("email not confirmed")) {
+        setError("Please confirm your email before logging in.");
+        return;
+      }
+
+      setError(authError.message || "Invalid email or password");
       return;
     }
 
