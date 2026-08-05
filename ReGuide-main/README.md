@@ -1,163 +1,203 @@
-ReGuide — Guide Selling & Rental Marketplace.
+# ReGuide - Guide Selling and Rental Marketplace
 
-ReGuide is a full-stack marketplace platform where users can buy, sell, and rent study guides with secure payments, deposits, and verification features.
+ReGuide is a full-stack marketplace for buying, selling, and renting study guides. It combines a React frontend, a Flask backend, and Supabase for authentication and database storage.
 
-Built with a modern web stack and deployed across cloud platforms, this project simulates a real-world production system.
+## Live Demo
 
----
+- Frontend: https://reguide.vercel.app
+- Backend: your Render service URL
 
-Live Demo
+## Features
 
-- Frontend (Vercel): https://your-vercel-url.vercel.app
-- Backend (Render): https://your-render-url.onrender.com
+### User Features
 
----
-
-Features
-
-👤 User Features
-
-- User authentication (Supabase)
+- Supabase authentication
 - Profile management
-- Phone number verification (OTP via Twilio)
 - Browse and search guides
 - Buy or rent guides
-- Deposit-based rental system
+- Rental deposit flow
+- Phone verification with OTP
 
-📚 Marketplace
+### Marketplace
 
-- List guides for sale or rent
-- Upload guide images (front/back/index)
-- Pricing system (buy + rent)
+- Create guide listings
+- Upload guide images
+- Buy and rent pricing flows
+- Contact seller support
 
-💳 Payments
+### Payments and Support
 
-- Razorpay integration (test mode)
-- Secure payment verification
-- Rental deposit collection
+- Razorpay payment integration
+- Payment verification on the backend
+- Email-based support requests
 
-💬 Communication
+### Admin Panel
 
-- Real-time chat between users
-- Contact seller feature
-- Support system (email-based)
-
-🛠 Admin Panel
-
-- Guide moderation (approve/reject)
+- Guide moderation
 - User management
 - Rental monitoring
+- Admin support inbox
 
----
+## Tech Stack
 
-🏗 Tech Stack
+### Frontend
 
-Frontend
+- React 18
+- Vite
+- React Router
+- Supabase JS client
 
-- React (Vite)
-- Tailwind CSS
-- Deployed on Vercel
+### Backend
 
-Backend
+- Flask
+- Gunicorn
+- Requests
+- Razorpay SDK
 
-- Flask (Python)
-- Gunicorn (production server)
-- Deployed on Render
+### Database and Auth
 
-Database & Auth
+- Supabase Postgres
+- Supabase Auth
 
-- Supabase (PostgreSQL + Auth)
+### Deployment
 
-External Services
+- Vercel for frontend
+- Render for backend
 
-- Razorpay (Payments)
-- Twilio (SMS OTP)
+## Project Structure
 
----
+```text
+ReGuide-main/
+├── README.md
+└── reguidemarketplace/
+	├── backend/
+	│   ├── app.py
+	│   ├── requirements.txt
+	│   └── .env.example
+	└── reguide/
+		├── index.html
+		├── package.json
+		├── vercel.json
+		└── src/
+			├── App.jsx
+			├── main.jsx
+			├── supabaseClient.js
+			├── components/
+			├── pages/
+			├── services/
+			├── constants/
+			├── database/
+			└── util/
+```
 
-⚙️ Project Structure
+## Environment Variables
 
-ReGuide/
-├── reguidemarketplace/
-│   ├── backend/
-│   │   ├── app.py
-│   │   ├── requirements.txt
-│   │   └── .env.example
-│   │
-│   ├── reguide/   (frontend)
-│   │   ├── src/
-│   │   ├── index.html
-│   │   ├── package.json
-│   │   └── vite.config.js
-│   │
-│   └── README.md
+### Frontend (.env)
 
----
+Set these in Vercel and locally if needed:
 
-🔐 Environment Variables
+```env
+VITE_SUPABASE_URL=https://your-project-ref.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-or-publishable-key
+VITE_BACKEND_URL=https://your-render-backend.onrender.com
+```
 
-Backend (.env)
+### Backend (.env)
 
-SUPABASE_URL=
-SUPABASE_SERVICE_ROLE_KEY=
+Set these in Render and locally if needed:
 
-RAZORPAY_KEY_ID=
-RAZORPAY_KEY_SECRET=
+```env
+SUPABASE_URL=https://your-project-ref.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
-TWILIO_PHONE_NUMBER=
-TWILIO_VERIFY_SERVICE_SID=
+RAZORPAY_KEY_ID=your-razorpay-key-id
+RAZORPAY_KEY_SECRET=your-razorpay-key-secret
 
-FRONTEND_ORIGIN=
+TWILIO_ACCOUNT_SID=your-twilio-account-sid
+TWILIO_AUTH_TOKEN=your-twilio-auth-token
+TWILIO_PHONE_NUMBER=your-twilio-phone-number
+TWILIO_VERIFY_SERVICE_SID=your-twilio-verify-service-sid
 
----
+SMTP_USER=your-email@example.com
+SMTP_PASSWORD=your-email-app-password
+SUPPORT_TO_EMAIL=support@example.com
 
-Frontend (.env)
+FRONTEND_ORIGIN=https://reguide.vercel.app
+PORT=5000
+```
 
-VITE_BACKEND_URL=
+Do not commit real secrets to GitHub.
 
----
+## Run Locally
 
-🚀 Running Locally
+### 1. Clone the repo
 
-1. Clone repo
+```bash
+git clone https://github.com/jerinjoji00/reguide.git
+cd ReGuide-main/reguidemarketplace
+```
 
-git clone https://github.com/your-username/ReGuide.git
-cd ReGuide
+### 2. Backend
 
----
-
-2. Backend setup
-
-cd reguidemarketplace/backend
+```bash
+cd backend
 pip install -r requirements.txt
 python app.py
+```
 
----
+The backend runs on `http://localhost:5000` by default.
 
-3. Frontend setup
+### 3. Frontend
 
-cd ../reguide
+Open a new terminal:
+
+```bash
+cd reguide
 npm install
 npm run dev
+```
 
----
+The frontend runs on `http://localhost:5173` by default.
 
-☁️ Deployment
+## Deploy to Vercel
 
-Frontend (Vercel)
+1. Import the GitHub repository into Vercel.
+2. Set the root directory to `reguidemarketplace/reguide`.
+3. Build command: `npm run build`.
+4. Output directory: `dist`.
+5. Add these environment variables:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   - `VITE_BACKEND_URL`
+6. Keep `vercel.json` so React Router routes work on refresh.
+7. Redeploy.
 
-- Root directory: "reguidemarketplace/reguide"
-- Build command: "npm run build"
-- Output directory: "dist"
-- Set "VITE_BACKEND_URL"
-- Keep the `vercel.json` rewrite so React Router routes work on refresh
+## Deploy to Render
 
-Backend (Render)
+1. Create a new Web Service on Render.
+2. Connect the same GitHub repo.
+3. Set the root directory to `reguidemarketplace/backend`.
+4. Build command: `pip install -r requirements.txt`.
+5. Start command: `gunicorn app:app --bind 0.0.0.0:$PORT`.
+6. Add all backend environment variables.
+7. Deploy and copy the live backend URL into `VITE_BACKEND_URL` in Vercel.
 
-- Root directory: "reguidemarketplace/backend"
-- Build: "pip install -r requirements.txt"
-- Start:
+## Important Notes
 
-gunicorn app:app --bind 0.0.0.0:$PORT
+- Supabase can be used directly from the frontend for auth and database access.
+- The Flask backend is required for payment verification and other server-side API flows.
+- Free Supabase projects may pause after inactivity.
+- Free Render web services can also sleep when unused.
+
+## Troubleshooting
+
+- If login shows `Failed to fetch`, check `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and Supabase Auth URL settings.
+- If backend requests fail, confirm the Render service is running and `VITE_BACKEND_URL` points to the live service.
+- If React routes show 404 on refresh, make sure `vercel.json` is deployed.
+
+## Security
+
+- Never expose the Supabase service role key in the frontend.
+- Use only the Supabase anon/publishable key in `VITE_SUPABASE_ANON_KEY`.
+- Keep secrets in Vercel and Render environment variables, not in Git.
+
