@@ -1,19 +1,21 @@
 .app-layout {
   display: flex;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* sidebar base */
 .sidebar {
-  width: 220px;
+  width: 260px;
   background: white;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   z-index: 1000;
 }
 
@@ -67,6 +69,9 @@
 }
 
 .sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
@@ -112,8 +117,10 @@
   padding: 24px;
   box-sizing: border-box;
   background: #f8fafc;
-  margin-left: 220px;
+  margin-left: 260px;
   position: relative;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .top-profile-button {

@@ -26,16 +26,23 @@ function Login() {
       return;
     }
 
-    const { data, error: authError } =
-      await supabase.auth.signInWithPassword({ email, password });
+    let data;
 
-    if (authError) {
-      if (String(authError.message || "").toLowerCase().includes("email not confirmed")) {
-        setError("Please confirm your email before logging in.");
+    try {
+      const result = await supabase.auth.signInWithPassword({ email, password });
+      data = result.data;
+
+      if (result.error) {
+        if (String(result.error.message || "").toLowerCase().includes("email not confirmed")) {
+          setError("Please confirm your email before logging in.");
+          return;
+        }
+
+        setError(result.error.message || "Invalid email or password");
         return;
       }
-
-      setError(authError.message || "Invalid email or password");
+    } catch {
+      setError("Cannot reach authentication server. Check internet, Vercel env, and Supabase project status.");
       return;
     }
 
